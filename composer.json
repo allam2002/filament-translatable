@@ -1,0 +1,69 @@
+{
+    "name": "jeffersongoncalves/filament-translatable",
+    "description": "Enhanced Filament plugin for spatie/laravel-translatable with translation status indicators, locale flags, and improved DX.",
+    "keywords": [
+        "jeffersongoncalves",
+        "laravel",
+        "filament",
+        "filament-plugin",
+        "translatable",
+        "spatie",
+        "i18n",
+        "localization",
+        "translation-status"
+    ],
+    "homepage": "https://github.com/jeffersongoncalves/filament-translatable",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Jefferson Goncalves",
+            "email": "gerson.simao.92@gmail.com",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "php": "^8.1",
+        "filament/filament": "^3.0",
+        "spatie/laravel-package-tools": "^1.14.0",
+        "spatie/laravel-translatable": "^6.0"
+    },
+    "require-dev": {
+        "larastan/larastan": "^2.0",
+        "laravel/pint": "^1.0",
+        "orchestra/testbench": "^8.0|^9.0",
+        "pestphp/pest": "^2.0",
+        "pestphp/pest-plugin-laravel": "^2.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "JeffersonGoncalves\\FilamentTranslatable\\": "src"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "JeffersonGoncalves\\FilamentTranslatable\\Tests\\": "tests"
+        }
+    },
+    "scripts": {
+        "post-autoload-dump": "@php ./vendor/bin/testbench package:discover --ansi",
+        "analyse": "vendor/bin/phpstan analyse",
+        "format": "vendor/bin/pint",
+        "test": "vendor/bin/pest"
+    },
+    "config": {
+        "sort-packages": true,
+        "allow-plugins": {
+            "pestphp/pest-plugin": true,
+            "phpstan/extension-installer": true
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "JeffersonGoncalves\\FilamentTranslatable\\FilamentTranslatableServiceProvider"
+            ]
+        }
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true
+}

@@ -1,0 +1,18 @@
+includes:
+    - vendor/larastan/larastan/extension.neon
+
+parameters:
+    paths:
+        - src
+
+    level: 5
+
+    reportUnmatchedIgnoredErrors: false
+
+    ignoreErrors:
+        -
+            identifier: missingType.iterableValue
+        -
+            message: '#Call to an undefined method Illuminate\\Database\\Eloquent\\Model::(setTranslation|getTranslation|getTranslatableAttributes|setLocale)\(\)#'
+        -
+            message: '#Call to an undefined method Illuminate\\Database\\ConnectionInterface::getDriverName\(\)#'
